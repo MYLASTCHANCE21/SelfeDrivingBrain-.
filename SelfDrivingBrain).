@@ -21,7 +21,7 @@ class Config:
         self.action_dim = None
         self.seed = None
 
-        self.lr = 3e-3
+        self.lr = 1e-3
         self.hebbian_lr = 1e-3
         self.prediction_lr = 1e-2
         self.meta_lr = 1e-3
