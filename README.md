@@ -26,7 +26,7 @@ A biologically‑inspired, self‑organising learning agent that combines **dyna
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/SelfDrivingBrain.git
+git https://github.com/MYLASTCHANCE21/SelfDrivingBrain.git
 cd SelfDrivingBrain
 pip install -r requirements.txt
 from self_driving_brain import Config, AdaptiveAgent, HiddenPatternEnv
