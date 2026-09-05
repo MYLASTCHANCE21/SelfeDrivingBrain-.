@@ -1060,9 +1060,9 @@ class EvolutionEngine:
                 enable_prediction=getattr(parent.brain, "enable_prediction", True),
                 enable_action_head=getattr(parent.brain, "enable_action_head", True),
             )
-            for name in ["Phi", "W", "M_op", "P_op", "W_in", "W_pred", "b_pred", "W_act", "b_act"]:
+            for name in ["Phi", "W", "M_op", "P_op", "W_in", "W_pred", "b_pred", "W_act", "b_act", "W_M_damp"]:
                 setattr(child_brain, name, getattr(parent.brain, name).copy())
-            for name in ["Phi", "W", "M_op", "P_op", "W_in", "W_pred", "W_act"]:
+            for name in ["Phi", "W", "M_op", "P_op", "W_in", "W_pred", "W_act", "W_M_damp"]:
                 val = getattr(child_brain, name)
                 val += self.rng.normal(0.0, mutation_scale, val.shape)
             new_pop.append(AdaptiveAgent(child_brain))
@@ -1372,5 +1372,6 @@ if __name__ == "__main__":
              W_pred=brain_train.W_pred,
              b_pred=brain_train.b_pred,
              W_act=brain_train.W_act,
-             b_act=brain_train.b_act)
+             b_act=brain_train.b_act,
+             W_M_damp=brain_train.W_M_damp)
     print("Brain saved to final_optimized_brain.npz")
